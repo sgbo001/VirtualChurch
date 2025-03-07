@@ -1,4 +1,22 @@
 from django.shortcuts import render
+from datetime import date
+from .models import Event, LiveStream
+from django.shortcuts import render, get_object_or_404
+from django.utils.timezone import now
 
 def index(request):
-    return render(request, 'base.html')
+    return render(request, 'index.html')
+
+def about(request):
+    return render(request, 'about.html')
+
+def live_event(request):
+    # Get today's date
+    today = now().date()
+
+    # Try to find a live stream happening today
+    live_stream = LiveStream.objects.filter(
+        start_time__date=today, end_time__date=today, is_live=True
+    ).first()
+
+    return render(request, 'live_event.html', {'live_stream': live_stream})
