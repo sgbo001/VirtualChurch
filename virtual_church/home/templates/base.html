@@ -1,87 +1,157 @@
 
 {% load static %}
-<!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="​Welcome to Christian Church, We can to help you know and experience the love of Jesus., Our Leaders, ​Welcome to Christian Church, Contact Us">
-    <meta name="description" content="">
-    {% block title %}{% endblock %}
-    <link rel="stylesheet" href="{% static 'nicepage.css' %}" media="screen">
-<link rel="stylesheet" href="{% static 'About.css' %}" media="screen">
-<script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-<script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 7.2.3, nicepage.com">
-    <meta name="referrer" content="origin">
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        {% block title %}{% endblock %}
+
+        <!-- CSS FILES -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+
+        <link rel="stylesheet" href="{% static 'css/slick.css' %}"/>
+
+        <link href="{% static 'css/tooplate-little-fashion.css' %}" rel="stylesheet">
+<!--
+
+Tooplate 2127 Little Fashion
+
+https://www.tooplate.com/view/2127-little-fashion
+
+-->
+    </head>
     
-    
-    
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i">
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"logo": "images/default-logo.png"
-}</script>
-    <meta name="theme-color" content="#8cbcc6">
-    <meta property="og:title" content="About">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-header" id="sec-882b"><div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="#" class="u-image u-logo u-image-1">
-          <img src="{% static 'images/default-logo.png' %} " class="u-logo-image u-logo-image-1">
-        </a>
-        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
-          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
-            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-hamburger-link u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
-              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
-              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
-</g></svg>
-            </a>
-          </div>
-          <div class="u-nav-container">
-            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{% url 'live_event' %}" style="padding: 10px 20px;">Live Events</a>
-            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="About.html" style="padding: 10px 20px;">Virtual Service</a>
-            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="{% url 'resources' %}" style="padding: 10px 20px;">Resources</a>
-            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" style="padding: 10px 20px;">Sermons</a>
-            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Gallery.html" style="padding: 10px 20px;">Gallery</a>
-            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Contact.html" style="padding: 10px 20px;">Login</a>
-            </li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#" style="padding: 10px 20px;">Donate</a>
-            </li></ul>
-          </div>
-          <div class="u-nav-container-collapse">
-            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
-              <div class="u-inner-container-layout u-sidenav-overflow">
-                <div class="u-menu-close"></div>
-                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Landing.html">Landing</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="About.html">About</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="./">Home</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Gallery.html">Gallery</a>
-</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Contact.html">Contact</a>
-</li></ul>
-              </div>
+    <body>
+
+        <section class="preloader">
+            <div class="spinner">
+                <span class="sk-inner-circle"></span>
             </div>
-            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
-          </div>
-        </nav>
-      </div></header> 
-      {% block content %}{% endblock %}
+        </section>
     
-    
-    
-      <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="sec-cd82"><div class="u-clearfix u-sheet u-sheet-1">
-          <p class="u-small-text u-text u-text-variant u-text-1"></p>
-        </div></footer>
-      <section class="u-backlink u-clearfix u-grey-80">
-        <p class="u-text">
-          <span>This site was created as PHD Project </span>
-          <a class="u-link" href="#" target="_blank" rel="nofollow">
-            <span>Gabriel Akpan</span>
-          </a>
-        </p>
-      </section>
-    
-  </body></html>
-  
-</body></html>
+        <main>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="index.html">
+                        <strong><span>Virtual</span> Church</strong>
+                    </a>
+
+                    <div class="d-lg-none">
+                        <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+
+                        <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'live_event' %}">Live Events</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="products.html">Virtual Service</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'resources' %}">Resources</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Gallery</a>
+                            </li>
+
+                            <li class="nav-item">
+                              <a class="nav-link" href="contact.html">About Us</a>
+                          </li>
+                        </ul>
+
+                        <div class="d-none d-lg-block">
+                            <a href="sign-in.html" class="bi-person custom-icon me-3"></a>
+
+                            <a href="product-detail.html" class="bi-bag custom-icon"></a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            {% block content %}{% endblock %}
+
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-10 me-auto mb-4">
+                        <h4 class="text-white mb-3"><a href="index.html">Little</a> Fashion</h4>
+                        <p class="copyright-text text-muted mt-lg-5 mb-4 mb-lg-0">Copyright © 2022 <strong>Little Fashion</strong></p>
+                        <br>
+                        <p class="copyright-text">Designed by <a href="https://www.tooplate.com/" target="_blank">Tooplate</a></p>
+                    </div>
+
+                    <div class="col-lg-5 col-8">
+                        <h5 class="text-white mb-3">Sitemap</h5>
+
+                        <ul class="footer-menu d-flex flex-wrap">
+                            <li class="footer-menu-item"><a href="about.html" class="footer-menu-link">Story</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Products</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy policy</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">FAQs</a></li>
+
+                            <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-4">
+                        <h5 class="text-white mb-3">Social</h5>
+
+                        <ul class="social-icon">
+
+                            <li><a href="#" class="social-icon-link bi-youtube"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-whatsapp"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-instagram"></a></li>
+
+                            <li><a href="#" class="social-icon-link bi-skype"></a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'js/Headroom.js' %}"></script>
+        <script src="{% static 'js/jQuery.headroom.js' %}"></script>
+        <script src="{% static 'js/slick.min.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+
+    </body>
+</html>

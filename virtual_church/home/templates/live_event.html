@@ -4,25 +4,31 @@
 {% block content %}
 {% block title %} <title>Virtual Church : Live Events</title>{% endblock %}
 
-<section class="u-align-center u-clearfix u-container-align-center  u-shading u-section-1" id="sec-5ea4" data-image-width="1980" data-image-height="1130">
-    <div style="text-align: center;">
-      <h3 class="u-align-left u-text u-text-body-alt-color u-text-2" > {{ live_stream.title }}</h3>
-      
-        {% if live_stream %}
+  <section class="team section-padding">
+    <div class="container">
+        <div class="row">
+            {% if live_stream %}
             {% with live_stream.stream_url|slice:"32:" as video_id %}
+            <div class="col-12">
+                <h2 class="mb-5"> <span>{{ live_stream.title }}</span></h2>
                 <iframe width="1200" height="500" src="https://www.youtube.com/embed/{{ video_id }}" 
                     frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                 </iframe>
+            </div>
+
+            <div class="col-lg-4 mb-lg-0 mb-4 col-12">
+               
+            </div>
             {% endwith %}
-        {% else %}
-            <h3 class="u-align-center u-text u-text-body-alt-color u-text-1" style="font-size: 24px;">
-                There is currently no live streaming.
-            </h3>
-        {% endif %}
+            {% else %}
+            <div class="col-12">
+                <h2 class="mb-5">There is currently no live streaming.</h2>
+            </div>
+
+            {% endif %}
+        </div>
     </div>
-  </section>
-  <p class="u-align-center u-text u-text-default u-text-8" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750"></a>
-  </p>
-    
+</section>
+
     
 {% endblock content %}

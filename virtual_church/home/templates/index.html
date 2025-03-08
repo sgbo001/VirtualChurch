@@ -3,14 +3,62 @@
 {% load static %}
 {% block content %}
 {% block title %} <title>Virtual Church : Home</title>{% endblock %}
-<section class="u-align-center u-clearfix u-container-align-center u-image u-shading u-section-1" id="sec-5ea4" data-image-width="1980" data-image-height="1130">
-  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-    <h1 class="u-align-left u-custom-font u-font-lato u-text u-text-body-alt-color u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500"> Welcome to our Virtual Church</h1>
-    <h3 class="u-align-left u-text u-text-body-alt-color u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500"> Duis aute irure dolor in reprehenderit in voluptate velit esse.</h3>
-   
-    <a href="#" class="u-active-white u-align-left u-border-2 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-btn-2" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">Join the Team</a>
+<section class="slick-slideshow">   
+  <div class="slick-custom">
+      <img src="{% static 'images/slideshow/medium-shot-business-women-high-five.jpeg' %}" class="img-fluid" alt="">
+
+      <div class="slick-bottom">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 col-10">
+                      <h1 class="slick-title">Cool Fashion</h1>
+
+                      <p class="lead text-white mt-lg-3 mb-lg-5">Little fashion template comes with total 8 HTML pages provided by Tooplate website.</p>
+
+                      <a href="about.html" class="btn custom-btn">Learn more about us</a>
+                  </div>
+              </div>
+          </div>
+      </div>
   </div>
+
+  <div class="slick-custom">
+      <img src="{% static 'images/slideshow/team-meeting-renewable-energy-project.jpeg' %}" class="img-fluid" alt="">
+
+      <div class="slick-bottom">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 col-10">
+                      <h1 class="slick-title">New Design</h1>
+
+                      <p class="lead text-white mt-lg-3 mb-lg-5">Please share this Little Fashion template to your friends. Thank you for supporting us.</p>
+
+                      <a href="product.html" class="btn custom-btn">Explore products</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="slick-custom">
+      <img src="{% static 'images/slideshow/two-business-partners-working-together-office-computer.jpeg' %}" class="img-fluid" alt="">
+
+      <div class="slick-bottom">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6 col-10">
+                      <h1 class="slick-title">Talk to us</h1>
+
+                      <p class="lead text-white mt-lg-3 mb-lg-5">Tooplate is one of the best HTML CSS template websites for everyone.</p>
+
+                      <a href="contact.html" class="btn custom-btn">Work with us</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
 </section>
-<p class="u-align-center u-text u-text-default u-text-8" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750"></a>
-</p>
+
+
 {% endblock content %}
