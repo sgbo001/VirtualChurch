@@ -1,10 +1,10 @@
 from django.contrib import admin
-from .models import LiveStream, VideoLibrary, Donation, CommunityResource
+from .models import LiveStream, Sermon, Donation, Resource
 
 
 admin.site.register(LiveStream)
-admin.site.register(VideoLibrary)
+admin.site.register(Sermon)
 admin.site.register(Donation)
-admin.site.register(CommunityResource)
+admin.site.register(Resource)
 
 admin.site.site_header = 'Virtual Church Administration Page'

@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+import urllib.parse 
 
 class LiveStream(models.Model):
     title = models.CharField(max_length=255)
@@ -14,11 +14,26 @@ class LiveStream(models.Model):
     def __str__(self):
         return self.title
 
-class VideoLibrary(models.Model):
+class Sermon(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     video_url = models.URLField(help_text="YouTube or Azure Video URL")
-    uploaded_at = models.DateTimeField(auto_now_add=True)
+    scripture = models.TextField()
+    scripture_link = models.URLField(blank=True, null=True, help_text="Link to Bible Gateway search")
+    notes = models.TextField()
+    questions = models.TextField()
+
+    def save(self, *args, **kwargs):
+        if self.scripture:
+            # Split the scripture references into lines
+            scripture_lines = self.scripture.split("\n")  # Splitting by newline
+            first_scripture = scripture_lines[0].strip() if scripture_lines else ""  # Get the first line
+            
+            base_url = "https://www.bible.com/search/bible?query="
+            encoded_scripture = urllib.parse.quote(first_scripture)  # Encode first scripture line
+            self.scripture_link = base_url + encoded_scripture  # Save only the first scripture link
+        
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.title
@@ -33,7 +48,7 @@ class Donation(models.Model):
         return f"{self.user.username if self.user else 'Anonymous'} - ${self.amount}"
 
 # Community Resources (Bible Study, Events, Forums)
-class CommunityResource(models.Model):
+class Resource(models.Model):
     RESOURCE_TYPES = (
         ('bible_study', 'Bible Study'),
         ('event', 'Event'),

@@ -1,0 +1,45 @@
+
+
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% block title %} <title>Virtual Church : Resources </title>{% endblock %}
+<section class="u-align-left u-clearfix u-container-align-center u-container-align-left u-valign-top-xl u-section-6" id="carousel_1692">
+  <div class="u-align-center u-container-align-center u-container-style u-expanded-width-lg u-expanded-width-xl u-group u-palette-1-base u-group-1">
+    <div class="u-container-layout u-valign-top u-container-layout-1">
+      <h2 class="u-align-center u-text u-text-default u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="0"> Our Resources</h2>
+    </div>
+  </div>
+  <div class="u-list u-list-1">
+    <div class="u-repeater u-repeater-1">
+      {% if resources %}
+      {% for resource in resources %}
+
+      <div class="u-align-center u-container-align-center u-container-style u-custom-item u-image u-list-item u-repeater-item u-shading u-shape-rectangle u-image-1" data-image-width="1380" data-image-height="918" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500">
+        <div class="u-container-layout u-similar-container u-valign-bottom u-container-layout-2">
+          <h5 class="u-align-center u-text u-text-default u-text-2">{{ resource.title }}</h5>
+          <p class="u-align-center u-text u-text-default u-text-3">{{ resource.description }}</p>
+          <p>{% if resource.files %}
+            <a href="{{ resource.files.url }}" download style="color: rgb(173, 185, 120); font-weight: bold;">
+              Click to Download File
+          </a>
+          
+        {% endif %}</p>
+        </div>
+      </div> 
+      {% endfor %} 
+    </div>
+
+    {% else %}
+    <p>No resources available.</p>
+{% endif %}
+  </div>
+
+  <p class="u-align-center u-text u-text-default u-text-8" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750"></a>
+  </p>
+</section>
+   
+   
+
+
+{% endblock content %}

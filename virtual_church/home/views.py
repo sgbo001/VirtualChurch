@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from datetime import date
-from .models import Event, LiveStream
+from .models import Event, LiveStream, Resource
 from django.shortcuts import render, get_object_or_404
 from django.utils.timezone import now
 
@@ -9,6 +9,10 @@ def index(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def resources(request):
+    resources = Resource.objects.all()
+    return render(request, 'resources.html', {'resources': resources})
 
 def live_event(request):
     # Get today's date

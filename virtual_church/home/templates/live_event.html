@@ -3,31 +3,26 @@
 {% load static %}
 {% block content %}
 {% block title %} <title>Virtual Church : Live Events</title>{% endblock %}
-<section class="u-clearfix u-image u-section-3" id="carousel_1970" data-image-width="1980" data-image-height="1114">
-    <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
-        <p><h3 class="u-align-left u-text u-text-body-alt-color u-text-1" style="font-size: 24px;">
-            {{ live_stream.title }}<br>
-        </h3>   </p>     
-          </div>
-          <div style="text-align: center;">
-            {% if live_stream %}
-                {% with live_stream.stream_url|slice:"32:" as video_id %}
-                    <iframe width="1200" height="500" src="https://www.youtube.com/embed/{{ video_id }}" 
-                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                    </iframe>
-                {% endwith %}
-            {% else %}
-                <h3 class="u-align-center u-text u-text-body-alt-color u-text-1" style="font-size: 24px;">
-                    There is currently no live streaming.
-                </h3>
-            {% endif %}
-        </div>
-        
-        
-        </div>
-      </div>
+
+<section class="u-align-center u-clearfix u-container-align-center  u-shading u-section-1" id="sec-5ea4" data-image-width="1980" data-image-height="1130">
+    <div style="text-align: center;">
+      <h3 class="u-align-left u-text u-text-body-alt-color u-text-2" > {{ live_stream.title }}</h3>
+      
+        {% if live_stream %}
+            {% with live_stream.stream_url|slice:"32:" as video_id %}
+                <iframe width="1200" height="500" src="https://www.youtube.com/embed/{{ video_id }}" 
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            {% endwith %}
+        {% else %}
+            <h3 class="u-align-center u-text u-text-body-alt-color u-text-1" style="font-size: 24px;">
+                There is currently no live streaming.
+            </h3>
+        {% endif %}
     </div>
   </section>
+  <p class="u-align-center u-text u-text-default u-text-8" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750"></a>
+  </p>
     
     
 {% endblock content %}
