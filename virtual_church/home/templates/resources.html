@@ -5,50 +5,39 @@
 {% block content %}
 {% block title %} <title>Virtual Church : Resources </title>{% endblock %}
 
-<section class="products section-padding">
+
+<section class="team section-padding">
   <div class="container">
       <div class="row">
-          
+
           <div class="col-12">
-              <h2 class="mb-5">Our Resources</h2>
+              <h2 class="mb-5">Our <span>Resources</span></h2>
           </div>
           {% if resources %}
           {% for resource in resources %}
-          <div class="col-lg-4 col-12 mb-3">
-              <div class="product-thumb">
-                  <a href="#">
-                      <img src="{% static 'images/product/evan-mcdougall-qnh1odlqOmk-unsplash.jpeg' %}" class="img-fluid product-image" alt="">
-                  </a>
+          <div class="col-lg-4 mb-4 col-12">
+              <div class="team-thumb d-flex align-items-center">
+                  <img src="{% static 'images/people/senior-man-wearing-white-face-mask-covid-19-campaign-with-design-space.jpeg' %}" class="img-fluid custom-circle-image team-image me-4" alt="">
 
-                  <div class="product-top d-flex">
-                    {% if resource.files %}
-                    <a href="{{ resource.files.url }}" download style="color: rgb(173, 185, 120); font-weight: bold;"><span class="product-alert me-auto" >Click to Download</span></a>
-                      {% endif %}
-                  </div>
-
-                  <div class="product-info d-flex">
-                      <div>
-                          <h5 class="product-title mb-0">
-                              <a href="#" class="product-title-link">{{ resource.title }}</a>
-                          </h5>
-
-                          <p class="product-p">{{ resource.description }}</p>
-                      </div>
+                  <div class="team-info">
+                      <h6 class="mb-0">{{ resource.title }}</h6>
+                      <a class="text-muted">{{ resource.description }} </a>
 
                   </div>
+                 
+                
               </div>
+              {% if resource.files %}
+              <a href="{{ resource.files.url }}" download style="color: rgb(56, 136, 80); font-weight: bold; "><span class="product-alert me-auto" >Click to Download</span></a>
+                {% endif %}
           </div>
 
-   
           {% endfor %} 
           {% else %}
           <p>No resources available.</p>
       {% endif %}
-
-        
+         
       </div>
   </div>
 </section>
-
-
 {% endblock content %}

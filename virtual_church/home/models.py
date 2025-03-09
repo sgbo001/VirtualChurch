@@ -22,6 +22,7 @@ class Sermon(models.Model):
     scripture_link = models.URLField(blank=True, null=True, help_text="Link to Bible Gateway search")
     notes = models.TextField()
     questions = models.TextField()
+    image = models.ImageField(upload_to='sermon_images/', blank=True, null=True)
 
     def save(self, *args, **kwargs):
         if self.scripture:

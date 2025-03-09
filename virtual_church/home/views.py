@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from datetime import date
-from .models import Event, LiveStream, Resource
+from .models import Event, LiveStream, Resource, Sermon
 from django.shortcuts import render, get_object_or_404
 from django.utils.timezone import now
 
@@ -24,3 +24,14 @@ def live_event(request):
     ).first()
 
     return render(request, 'live_event.html', {'live_stream': live_stream})
+
+
+def sermon_list(request):
+    """ View to list all sermons """
+    sermons = Sermon.objects.all()  # Fetch all sermons
+    return render(request, 'sermon_list.html', {'sermons': sermons})
+
+def sermon_detail(request, pk):
+    """ View to display a single sermon with full details """
+    sermon = get_object_or_404(Sermon, pk=pk)  # Get the specific sermon or return 404
+    return render(request, 'sermon_detail.html', {'sermon': sermon})
